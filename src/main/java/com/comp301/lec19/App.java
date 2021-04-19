@@ -1,6 +1,8 @@
 package com.comp301.lec19;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -11,15 +13,24 @@ public class App extends Application {
   @Override
   public void start(Stage stage) {
     // Set the Stage title
-    stage.setTitle("Hello, World!");
+    stage.setTitle("Hello World!");
 
     // Create a new Pane to hold the UI components
     StackPane pane = new StackPane();
 
     // Create a Button component
     Button btn = new Button();
-    btn.setText("Say 'Hello, World'");
-    btn.setOnAction((event) -> System.out.println("Hello, World!"));
+    btn.setText("Say 'Hello World'");
+
+    // Add a "click handler" action to the button
+    // TODO: This can be simplified to use a lambda expression
+    btn.setOnAction(
+        new EventHandler<ActionEvent>() {
+          @Override
+          public void handle(ActionEvent actionEvent) {
+            System.out.println("Hello World!");
+          }
+        });
 
     // Add the Button to the Pane
     pane.getChildren().add(btn);
