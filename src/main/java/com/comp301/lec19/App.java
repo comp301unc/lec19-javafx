@@ -19,7 +19,7 @@ public class App extends Application {
     // Create a Button component
     Button btn = new Button();
     btn.setText("Say 'Hello, World'");
-    btn.setOnAction(event -> System.out.println("Hello, World!"));
+    btn.setOnAction((event) -> System.out.println("Hello, World!"));
 
     // Add the Button to the Pane
     pane.getChildren().add(btn);
